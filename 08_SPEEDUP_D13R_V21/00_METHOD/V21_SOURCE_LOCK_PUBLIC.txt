@@ -1,0 +1,58 @@
+﻿MDO SPEEDUP D13R V21 SOURCE LOCK
+================================
+
+Reference name:
+MDO_RAMSEY_MEGA_SPEEDUP_D13R_V21_20260508_233954
+
+Reference status:
+PRIVATE_REFERENCE_LOCKED
+
+Purpose:
+Reference for MDO controller behavior.
+Not public implementation disclosure.
+
+Source ZIP SHA256:
+726BDAC1AF9F9108E0D7A4E772D17E9A549F053218E15BD94933A748F6541EE9
+
+Private engine source SHA256:
+D4A3523B45315D03137A6464B5E798372FEA791E22C8415FC6C21A6DD3D73901
+
+External solver audit:
+PASS_NO_EXTERNAL_SOLVER_FINGERPRINT
+
+Public disclosure rule:
+Do not publish private source code, scoring internals, rule mechanics, or solver logic.
+Publish only:
+- black-box behavior,
+- hashes,
+- summaries,
+- runtime,
+- output evidence.
+
+V21 reference fragment:
+d13_R_neighborhood
+
+Parameters:
+n = 13
+raw_bits = C(13,2) = 78
+forbidden = redK3 / blueK5
+degree_window = 4..4
+
+Observed modes:
+- baseline
+- degree_only
+- triangle_rule_only
+- full_mcdo
+
+Observed mean speedup:
+full_mcdo approx 1922x versus baseline
+
+Interpretation:
+The speedup comes from the interaction of:
+1. exact degree-window control,
+2. redK3-free triangle-neighborhood forcing,
+3. branch ordering that triggers propagations early.
+
+Use in this repository:
+The public speedup stage uses V21 as a behavior reference only.
+It does not publish private solver internals.
