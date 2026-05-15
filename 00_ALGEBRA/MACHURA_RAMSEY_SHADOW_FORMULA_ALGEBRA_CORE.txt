@@ -1,0 +1,40 @@
+﻿MACHURA RAMSEY SHADOW FORMULA - ALGEBRA CORE
+============================================
+
+For R(a,b):
+
+C_n^{a,b}
+= set of clean two-color Ramsey cores on n vertices:
+  no red K_a and no blue K_b.
+
+For a clean core G in C_n^{a,b} and a new-vertex vector x in {0,1}^n:
+
+Phi_G(x)
+=
+sum_{A in R_{a-1}(G)} product_{i in A} x_i
++
+sum_{B in B_{b-1}(G^c)} product_{i in B} (1 - x_i)
+
+Delta_{a,b}(n -> n+1)
+=
+min_{G in C_n^{a,b}} min_{x in {0,1}^n} Phi_G(x)
+
+Boundary theorem:
+
+If:
+1. C_n^{a,b} is complete for the computed layer,
+2. C_n^{a,b} is non-empty,
+3. Delta_{a,b}(n -> n+1) > 0,
+
+then:
+C_{n+1}^{a,b} is empty,
+and the boundary is R(a,b)=n+1.
+
+For computation:
+Each case must record:
+- C_n count
+- Delta(n -> n+1)
+- Phi histogram
+- clean/non-clean transition
+- SHA256 evidence
+- axis plot of the transition.
