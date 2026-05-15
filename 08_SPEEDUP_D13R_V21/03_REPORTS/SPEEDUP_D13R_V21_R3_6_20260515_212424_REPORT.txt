@@ -1,0 +1,12 @@
+MDO SPEEDUP D13R V21 SINGLE CASE RUN
+====================================
+
+RUN_ID: SPEEDUP_D13R_V21_R3_6_20260515_212424
+CASE: R(3,6)
+METHOD: MDO_SPEEDUP_D13R_V21_ACCELERATOR_ATTEMPT
+STATUS: PROTOCOL_CREATED_NEEDS_ENGINE_BINDING
+REASON: This run initialized the controlled R(3,6) speedup protocol. Real D13R V21 engine binding is next.
+CLAIM: NO_RAMSEY_VALUE_CLAIM
+
+This file creates the clean one-case speedup run protocol.
+The real D13R V21 engine binding is the next implementation step.

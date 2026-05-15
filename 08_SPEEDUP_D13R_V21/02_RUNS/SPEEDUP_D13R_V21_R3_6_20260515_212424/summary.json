@@ -1,0 +1,13 @@
+{
+  "run_id": "SPEEDUP_D13R_V21_R3_6_20260515_212424",
+  "case": "R(3,6)",
+  "a": 3,
+  "b": 6,
+  "method": "MDO_SPEEDUP_D13R_V21_ACCELERATOR_ATTEMPT",
+  "status": "PROTOCOL_CREATED_NEEDS_ENGINE_BINDING",
+  "reason": "This run initialized the controlled R(3,6) speedup protocol. Real D13R V21 engine binding is next.",
+  "limit_sec": 600,
+  "elapsed_sec": 0.412405,
+  "claim": "NO_RAMSEY_VALUE_CLAIM",
+  "next_step": "Bind real MDO_RAMSEY_MEGA_SPEEDUP_D13R_V21 engine logic to this single-case protocol."
+}
