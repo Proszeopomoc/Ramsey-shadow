@@ -1,0 +1,101 @@
+﻿MACHURA RAMSEY SHADOW GRID - COMPUTATION STATUS AND METHOD SPLIT
+================================================================
+
+Created local: 2026-05-15T21:05:56.8890570+02:00
+Author: Michal Machura
+
+1. Algebra
+
+All computations use the same algebraic core:
+
+- clean layer C_n^{a,b}
+- one-vertex shadow Phi_G(x)
+- transition rule Phi_G(x)=0
+- boundary Delta_{a,b}(n -> n+1)
+
+2. V01 exact brute-force layer engine
+
+The V01 engine is an exact brute-force layer demonstrator.
+
+It builds clean layers by:
+- taking every graph G in the current clean layer,
+- testing every x in {0,1}^n,
+- keeping only extensions with Phi_G(x)=0.
+
+This method is mathematically direct and useful for small cases.
+
+3. Results accepted from V01
+
+The following cases reached known shadow boundaries and are kept as exact small-case validations:
+
+- R(3,3) = 6
+- R(3,4) = 9
+- R(3,5) = 14
+
+These are retained as correct small-case validation results.
+
+4. Partial cases from V01
+
+The following cases did not reach their boundary in V01:
+
+- R(3,7)
+- R(3,8)
+- R(3,9)
+- R(3,10)
+
+Reason:
+The V01 extension/layer limits were too small for these cases.
+
+Example:
+For R(3,9), the run reached n=10 with Delta=0 and many Phi=0 extensions still present.
+Therefore the layer was still alive and the boundary was not reached.
+
+These cases must be marked as partial:
+
+status = STOP_EXTENSION_LIMIT
+conclusion = BOUNDARY_NOT_REACHED
+
+5. Method split for next stage
+
+For cases where V01 reached the boundary:
+keep exact brute-force layer result.
+
+For cases where V01 did not reach the boundary:
+rerun using the MDO speedup accelerator.
+
+Method name:
+
+MDO_SPEEDUP_D13R_V21_ACCELERATOR
+
+Scope:
+- one case at a time,
+- author-controlled stopping,
+- time limit recorded,
+- best layer reached recorded,
+- Phi0/Phi1/Delta progress recorded,
+- progress plot generated,
+- SHA256 evidence manifest generated.
+
+6. Claim rule
+
+If a case is closed:
+status = CLOSED_BY_SHADOW_DELTA
+
+If a case stops before closure:
+status = STOPPED_PARTIAL
+or
+status = NEEDS_STRONGER_ACCELERATOR
+
+No incomplete run may be described as a Ramsey-number proof.
+
+7. Public wording
+
+Correct wording:
+
+V01 exactly validates small cases where the boundary is reached.
+For larger cases, V01 provides partial layer evidence only.
+The next stage uses MDO_SPEEDUP_D13R_V21_ACCELERATOR to continue the unresolved cases.
+
+Incorrect wording:
+
+V01 computed the full grid up to R(10,10).
