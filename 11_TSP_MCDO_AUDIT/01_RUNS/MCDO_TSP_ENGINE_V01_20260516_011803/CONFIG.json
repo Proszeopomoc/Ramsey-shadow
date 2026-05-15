@@ -1,0 +1,9 @@
+{
+  "run_id": "MCDO_TSP_ENGINE_V01_20260516_011803",
+  "input_dir": "C:\\machura_ramsey_shadow_grid_1_10\\11_TSP_MCDO_AUDIT\\00_INPUT",
+  "candidate_k": 40,
+  "max_passes": 120,
+  "max_seconds_per_method": 30.0,
+  "seed": 123,
+  "claim_rule": "measured behavior only"
+}

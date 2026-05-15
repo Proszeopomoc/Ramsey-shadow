@@ -1,0 +1,11 @@
+TSP MCDO ENGINE V01 REPORT
+INSTANCE: dsj1000
+N: 1000
+WEIGHT_TYPE: CEIL_2D
+OPTIMUM: 18659688
+
+nearest_neighbor: length=24631468 gap=32.003643362096945 time=0.057144 moves=0 gain_per_1000_moves=0.0
+two_opt: length=20792912 gap=11.432259746250848 time=3.506501 moves=4562887 gain_per_1000_moves=841.255985519694
+mcdo: length=20793505 gap=11.435437720073347 time=1.164039 moves=1370126 gain_per_1000_moves=2801.175220381191
+
+CLAIM: measured behavior only on this run.

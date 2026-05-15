@@ -1,0 +1,5 @@
+MCDO TSP ENGINE V01 SUMMARY
+
+dsj1000 | nearest_neighbor | length=24631468 | gap=32.003643362096945 | time=0.057144
+dsj1000 | two_opt | length=20792912 | gap=11.432259746250848 | time=3.506501
+dsj1000 | mcdo | length=20793505 | gap=11.435437720073347 | time=1.164039

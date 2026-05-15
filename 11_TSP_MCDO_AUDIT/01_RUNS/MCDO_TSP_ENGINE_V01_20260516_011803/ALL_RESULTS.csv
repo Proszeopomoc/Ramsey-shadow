@@ -1,0 +1,4 @@
+instance,method,n,length,optimum,gap_percent,runtime_sec,passes,total_moves_checked,improving_moves,accepted_moves,rejected_moves,mcdo_pruned_moves,mcdo_priority_hits,mcdo_window_rejections,gain_per_1000_moves
+dsj1000,nearest_neighbor,1000,24631468,18659688,32.003643362096945,0.057144,0,0,0,0,0,0,0,0,0.0
+dsj1000,two_opt,1000,20792912,18659688,11.432259746250848,3.506501,120,4562887,120,120,0,0,0,0,841.255985519694
+dsj1000,mcdo,1000,20793505,18659688,11.435437720073347,1.164039,120,1370126,120,120,0,1341971,555,0,2801.175220381191
