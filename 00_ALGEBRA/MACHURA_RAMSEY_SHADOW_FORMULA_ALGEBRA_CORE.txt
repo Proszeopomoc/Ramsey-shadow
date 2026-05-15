@@ -1,13 +1,26 @@
 ﻿MACHURA RAMSEY SHADOW FORMULA - ALGEBRA CORE
 ============================================
 
+1. Clean Ramsey layer
+
 For R(a,b):
 
 C_n^{a,b}
-= set of clean two-color Ramsey cores on n vertices:
-  no red K_a and no blue K_b.
+=
+the set of two-color graphs on n vertices with:
+- no red K_a,
+- no blue K_b.
 
-For a clean core G in C_n^{a,b} and a new-vertex vector x in {0,1}^n:
+Equivalently:
+C_n^{a,b} is the clean layer at size n.
+
+2. One-vertex shadow
+
+For a clean core G in C_n^{a,b} and a new-vertex connection vector:
+
+x in {0,1}^n
+
+define:
 
 Phi_G(x)
 =
@@ -15,26 +28,100 @@ sum_{A in R_{a-1}(G)} product_{i in A} x_i
 +
 sum_{B in B_{b-1}(G^c)} product_{i in B} (1 - x_i)
 
+where:
+R_{a-1}(G) is the family of red K_{a-1} subgraphs in G,
+B_{b-1}(G^c) is the family of blue K_{b-1} subgraphs in the complement color.
+
+3. Layer construction rule
+
+Given C_n^{a,b}, the next clean layer is built by one-vertex extensions:
+
+C_{n+1}^{a,b}
+=
+{ G + x : G in C_n^{a,b}, Phi_G(x) = 0 }
+
+Meaning:
+
+Phi_G(x) = 0
+=> the graph G+x remains clean and passes to the next layer.
+
+Phi_G(x) > 0
+=> the graph G+x creates at least one forbidden red K_a or blue K_b,
+   so it does not pass to the next clean layer.
+
+4. Isomorphism quotient
+
+To avoid duplicate labelled copies, define:
+
+K_n^{a,b}
+=
+C_n^{a,b} / Iso
+
+Then the canonical layer update is:
+
+K_{n+1}^{a,b}
+=
+CanonIso({ G + x : G in K_n^{a,b}, Phi_G(x) = 0 })
+
+5. Iterative computation
+
+Start from C_1^{a,b}.
+
+For each n:
+- take all graphs G in C_n^{a,b},
+- try all vectors x in {0,1}^n,
+- keep only extensions with Phi_G(x)=0,
+- canonicalize modulo isomorphism,
+- obtain C_{n+1}^{a,b} or K_{n+1}^{a,b}.
+
+Thus the formula does not guess C_n.
+It constructs C_{n+1} from C_n by the condition Phi_G(x)=0.
+
+6. Delta boundary
+
+Define:
+
 Delta_{a,b}(n -> n+1)
 =
 min_{G in C_n^{a,b}} min_{x in {0,1}^n} Phi_G(x)
 
-Boundary theorem:
+Equivalently, after quotienting:
+
+Delta_{a,b}(n -> n+1)
+=
+min_{G in K_n^{a,b}} min_{x in {0,1}^n} Phi_G(x)
+
+7. Ramsey boundary condition
 
 If:
-1. C_n^{a,b} is complete for the computed layer,
-2. C_n^{a,b} is non-empty,
-3. Delta_{a,b}(n -> n+1) > 0,
+
+C_n^{a,b} != empty
+
+and
+
+Delta_{a,b}(n -> n+1) > 0
 
 then:
-C_{n+1}^{a,b} is empty,
-and the boundary is R(a,b)=n+1.
 
-For computation:
-Each case must record:
-- C_n count
-- Delta(n -> n+1)
-- Phi histogram
-- clean/non-clean transition
-- SHA256 evidence
-- axis plot of the transition.
+C_{n+1}^{a,b} = empty
+
+and therefore:
+
+R(a,b) = n+1
+
+8. Short operational form
+
+Phi = 0
+=> graph passes to the next clean layer.
+
+Phi > 0
+=> graph does not pass.
+
+Last non-empty clean layer:
+C_n^{a,b} != empty
+
+First empty clean layer:
+C_{n+1}^{a,b} = empty
+
+Boundary:
+R(a,b) = n+1
