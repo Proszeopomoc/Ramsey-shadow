@@ -1,0 +1,31 @@
+{
+  "case_name": "R(4,2)",
+  "case_id": "R4_2",
+  "a": 4,
+  "b": 2,
+  "status": "BOUNDARY_FOUND",
+  "boundary_R_ab": 4,
+  "layers": [
+    {
+      "n": 1,
+      "classes": 1,
+      "delta_next": 0
+    },
+    {
+      "n": 2,
+      "classes": 1,
+      "delta_next": 0
+    },
+    {
+      "n": 3,
+      "classes": 1,
+      "delta_next": 1
+    },
+    {
+      "n": 4,
+      "classes": 0,
+      "delta_next": null
+    }
+  ],
+  "elapsed_sec": 0.000998
+}
