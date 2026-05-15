@@ -1,0 +1,41 @@
+{
+  "case_name": "R(2,6)",
+  "case_id": "R2_6",
+  "a": 2,
+  "b": 6,
+  "status": "BOUNDARY_FOUND",
+  "boundary_R_ab": 6,
+  "layers": [
+    {
+      "n": 1,
+      "classes": 1,
+      "delta_next": 0
+    },
+    {
+      "n": 2,
+      "classes": 1,
+      "delta_next": 0
+    },
+    {
+      "n": 3,
+      "classes": 1,
+      "delta_next": 0
+    },
+    {
+      "n": 4,
+      "classes": 1,
+      "delta_next": 0
+    },
+    {
+      "n": 5,
+      "classes": 1,
+      "delta_next": 1
+    },
+    {
+      "n": 6,
+      "classes": 0,
+      "delta_next": null
+    }
+  ],
+  "elapsed_sec": 0.001002
+}

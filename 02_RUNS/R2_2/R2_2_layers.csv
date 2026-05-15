@@ -1,0 +1,2 @@
+case_name,a,b,n,clean_layer_classes,delta_n_to_n_plus_1,next_layer_classes,phi_hist
+"R(2,2)",2,2,1,1,1,0,"{""1"": 2}"

@@ -1,0 +1,26 @@
+{
+  "case_name": "R(2,3)",
+  "case_id": "R2_3",
+  "a": 2,
+  "b": 3,
+  "status": "BOUNDARY_FOUND",
+  "boundary_R_ab": 3,
+  "layers": [
+    {
+      "n": 1,
+      "classes": 1,
+      "delta_next": 0
+    },
+    {
+      "n": 2,
+      "classes": 1,
+      "delta_next": 1
+    },
+    {
+      "n": 3,
+      "classes": 0,
+      "delta_next": null
+    }
+  ],
+  "elapsed_sec": 0.0
+}

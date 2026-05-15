@@ -1,0 +1,71 @@
+{
+  "case_name": "R(3,5)",
+  "case_id": "R3_5",
+  "a": 3,
+  "b": 5,
+  "status": "STOP_MAX_N",
+  "boundary_R_ab": null,
+  "layers": [
+    {
+      "n": 1,
+      "classes": 1,
+      "delta_next": 0
+    },
+    {
+      "n": 2,
+      "classes": 2,
+      "delta_next": 0
+    },
+    {
+      "n": 3,
+      "classes": 3,
+      "delta_next": 0
+    },
+    {
+      "n": 4,
+      "classes": 6,
+      "delta_next": 0
+    },
+    {
+      "n": 5,
+      "classes": 9,
+      "delta_next": 0
+    },
+    {
+      "n": 6,
+      "classes": 20,
+      "delta_next": 0
+    },
+    {
+      "n": 7,
+      "classes": 25,
+      "delta_next": 0
+    },
+    {
+      "n": 8,
+      "classes": 19,
+      "delta_next": 0
+    },
+    {
+      "n": 9,
+      "classes": 10,
+      "delta_next": 0
+    },
+    {
+      "n": 10,
+      "classes": 0,
+      "delta_next": null
+    },
+    {
+      "n": 11,
+      "classes": 0,
+      "delta_next": null
+    },
+    {
+      "n": 12,
+      "classes": 0,
+      "delta_next": null
+    }
+  ],
+  "elapsed_sec": 22.217719
+}

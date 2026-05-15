@@ -1,0 +1,21 @@
+{
+  "case_name": "R(1,6)",
+  "case_id": "R1_6",
+  "a": 1,
+  "b": 6,
+  "status": "BOUNDARY_FOUND_TRIVIAL",
+  "boundary_R_ab": 1,
+  "layers": [
+    {
+      "n": 0,
+      "classes": 1,
+      "delta_next": 1
+    },
+    {
+      "n": 1,
+      "classes": 0,
+      "delta_next": null
+    }
+  ],
+  "elapsed_sec": 0.001
+}

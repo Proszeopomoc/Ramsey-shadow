@@ -1,0 +1,3 @@
+case_name,a,b,n,clean_layer_classes,delta_n_to_n_plus_1,next_layer_classes,phi_hist
+"R(3,2)",3,2,1,1,0,1,"{""0"": 1, ""1"": 1}"
+"R(3,2)",3,2,2,1,1,0,"{""1"": 3, ""2"": 1}"
