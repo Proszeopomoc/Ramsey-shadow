@@ -1,0 +1,31 @@
+﻿MDO SPEEDUP D13R V21 ACCELERATOR
+================================
+
+Purpose:
+Continue unresolved Machura Ramsey Shadow Formula grid cases.
+
+Start case:
+R(3,6)
+
+Queue source:
+01_CASE_GRID/MACHURA_RAMSEY_CASES_FOR_SPEEDUP_D13R_V21.csv
+
+Method:
+One case at a time.
+Author-controlled stopping.
+Record every run with:
+- case name
+- method
+- start time
+- elapsed time
+- last layer reached
+- best Phi/Delta status
+- stop reason
+- SHA256 evidence
+- progress plot
+
+Claim rule:
+A case is closed only when the run proves Delta(n -> n+1) > 0
+after reaching a non-empty clean layer C_n.
+
+Partial runs are recorded as partial evidence only.
