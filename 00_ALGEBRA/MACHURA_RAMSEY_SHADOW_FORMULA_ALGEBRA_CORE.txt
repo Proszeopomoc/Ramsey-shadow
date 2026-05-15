@@ -125,3 +125,51 @@ C_{n+1}^{a,b} = empty
 
 Boundary:
 R(a,b) = n+1
+
+9. Full layer identity versus catalogue computation
+
+The construction identity
+
+C_{n+1}^{a,b}
+=
+{ G + x : G in C_n^{a,b}, Phi_G(x) = 0 }
+
+is an exact mathematical identity for the full clean layer C_n^{a,b}.
+
+Reason:
+Every clean graph H in C_{n+1}^{a,b} remains clean after deleting any one vertex.
+The remaining graph G = H - v belongs to C_n^{a,b}.
+The deleted vertex v defines a connection vector x.
+Since H is clean, this vector satisfies Phi_G(x)=0.
+Therefore H appears as G+x.
+
+Thus, at the level of the full mathematical layer C_n^{a,b}, no graph is missed.
+
+For computation, one usually works with a finite catalogue or isomorphism quotient:
+
+K_n^{a,b}
+=
+C_n^{a,b} / Iso
+
+When a computed catalogue K_n^{a,b} is complete modulo isomorphism, the same update gives the full next quotient layer:
+
+K_{n+1}^{a,b}
+=
+CanonIso({ G + x : G in K_n^{a,b}, Phi_G(x)=0 })
+
+If a catalogue is intentionally partial, the update gives the catalogue-generated sublayer only.
+This is not a defect of the formula.
+It is the standard distinction between:
+- the full mathematical clean layer C_n^{a,b},
+- and a finite computational catalogue K_n^{a,b}.
+
+Operational rule:
+
+Full C_n^{a,b}
+=> exact construction of C_{n+1}^{a,b}.
+
+Complete K_n^{a,b} modulo isomorphism
+=> exact construction of K_{n+1}^{a,b}.
+
+Partial K_n^{a,b}
+=> partial generated evidence layer.
