@@ -1,0 +1,174 @@
+﻿MACHURA RAMSEY SHADOW FORMULA - LAYER CONSTRUCTION CORE
+=======================================================
+
+Author: Michal Machura
+Scope: algebraic layer construction for Ramsey clean graphs
+
+1. Clean layer
+
+C_n^{a,b}
+=
+the set of two-color graphs on n vertices with:
+- no red K_a,
+- no blue K_b.
+
+Equivalently:
+C_n^{a,b} is the clean layer at size n.
+
+2. One-vertex shadow
+
+For a clean core G in C_n^{a,b} and a new-vertex connection vector:
+
+x in {0,1}^n
+
+define:
+
+Phi_G(x)
+=
+sum_{A in R_{a-1}(G)} product_{i in A} x_i
++
+sum_{B in B_{b-1}(G^c)} product_{i in B} (1 - x_i)
+
+where:
+R_{a-1}(G) is the family of red K_{a-1} subgraphs in G,
+B_{b-1}(G^c) is the family of blue K_{b-1} subgraphs in the complement color.
+
+3. Layer construction rule
+
+Given C_n^{a,b}, the next clean layer is built by one-vertex extensions:
+
+C_{n+1}^{a,b}
+=
+{ G + x : G in C_n^{a,b}, Phi_G(x) = 0 }
+
+Meaning:
+
+Phi_G(x) = 0
+=> the graph G+x remains clean and passes to the next layer.
+
+Phi_G(x) > 0
+=> the graph G+x creates at least one forbidden red K_a or blue K_b,
+   so it does not pass to the next clean layer.
+
+4. Isomorphism quotient
+
+To avoid duplicate labelled copies, define:
+
+K_n^{a,b}
+=
+C_n^{a,b} / Iso
+
+Then the canonical layer update is:
+
+K_{n+1}^{a,b}
+=
+CanonIso({ G + x : G in K_n^{a,b}, Phi_G(x) = 0 })
+
+5. Iterative computation
+
+Start from C_1^{a,b}.
+
+For each n:
+- take all graphs G in C_n^{a,b},
+- try all vectors x in {0,1}^n,
+- keep only extensions with Phi_G(x)=0,
+- canonicalize modulo isomorphism,
+- obtain C_{n+1}^{a,b} or K_{n+1}^{a,b}.
+
+Thus the formula does not guess C_n.
+It constructs C_{n+1} from C_n by the condition Phi_G(x)=0.
+
+6. Delta boundary
+
+Define:
+
+Delta_{a,b}(n -> n+1)
+=
+min_{G in C_n^{a,b}} min_{x in {0,1}^n} Phi_G(x)
+
+Equivalently, after quotienting:
+
+Delta_{a,b}(n -> n+1)
+=
+min_{G in K_n^{a,b}} min_{x in {0,1}^n} Phi_G(x)
+
+7. Ramsey boundary condition
+
+If:
+
+C_n^{a,b} != empty
+
+and
+
+Delta_{a,b}(n -> n+1) > 0
+
+then:
+
+C_{n+1}^{a,b} = empty
+
+and therefore:
+
+R(a,b) = n+1
+
+8. Short operational form
+
+Phi = 0
+=> graph passes to the next clean layer.
+
+Phi > 0
+=> graph does not pass.
+
+Last non-empty clean layer:
+C_n^{a,b} != empty
+
+First empty clean layer:
+C_{n+1}^{a,b} = empty
+
+Boundary:
+R(a,b) = n+1
+
+9. Full layer identity versus catalogue computation
+
+The construction identity
+
+C_{n+1}^{a,b}
+=
+{ G + x : G in C_n^{a,b}, Phi_G(x) = 0 }
+
+is an exact mathematical identity for the full clean layer C_n^{a,b}.
+
+Reason:
+Every clean graph H in C_{n+1}^{a,b} remains clean after deleting any one vertex.
+The remaining graph G = H - v belongs to C_n^{a,b}.
+The deleted vertex v defines a connection vector x.
+Since H is clean, this vector satisfies Phi_G(x)=0.
+Therefore H appears as G+x.
+
+Thus, at the level of the full mathematical layer C_n^{a,b}, no graph is missed.
+
+For computation, one usually works with a finite catalogue or isomorphism quotient:
+
+K_n^{a,b}
+=
+C_n^{a,b} / Iso
+
+When a computed catalogue K_n^{a,b} is complete modulo isomorphism, the same update gives the full next quotient layer:
+
+K_{n+1}^{a,b}
+=
+CanonIso({ G + x : G in K_n^{a,b}, Phi_G(x)=0 })
+
+10. Implementation rule
+
+Every Ramsey engine in this repository must follow this order:
+
+1. define or load C_n^{a,b} / K_n^{a,b}
+2. compute Phi_G(x)
+3. keep Phi_G(x)=0 extensions
+4. canonicalize if using K_n^{a,b}
+5. compute Delta boundary
+6. only then state a Ramsey boundary claim
+
+Forbidden implementation shortcut:
+Do not replace Phi-layer construction with blind DFS and then call it the shadow formula.
+
