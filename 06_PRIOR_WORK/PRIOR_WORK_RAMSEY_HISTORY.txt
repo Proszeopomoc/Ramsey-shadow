@@ -1,0 +1,166 @@
+﻿MACHURA RAMSEY SHADOW FORMULA
+PRIOR WORK AND HISTORICAL CONTEXT
+=================================
+
+1. Frank P. Ramsey (1930)
+
+Ramsey introduced and proved the fundamental finiteness theorem
+for Ramsey numbers.
+
+Reference:
+Frank P. Ramsey,
+"On a Problem of Formal Logic",
+Proceedings of the London Mathematical Society,
+1930.
+
+Contribution:
+- existence and finiteness of Ramsey numbers.
+
+Did not provide:
+- explicit construction formula,
+- layer recursion,
+- one-vertex extension algebra.
+
+
+2. Paul Erdős and George Szekeres (1935)
+
+Established classical exponential upper bounds for diagonal Ramsey numbers.
+
+Contribution:
+- R(k,k) <= 4^k.
+
+Later:
+Erdős probabilistic method (1947)
+gave the first exponential lower bounds.
+
+Did not provide:
+- explicit graph-layer recursion,
+- vertex-extension formula.
+
+
+3. Geoffrey Exoo (1989)
+
+Constructed early Ramsey(5,5,42) graphs.
+
+Contribution:
+- lower bound R(5,5) >= 43.
+
+Did not provide:
+- exhaustive catalogue,
+- Phi formula,
+- boundary algebra.
+
+
+4. Brendan D. McKay and Stanislaw Radziszowski (1997)
+
+Extended the known Ramsey(5,5,42) constructions.
+
+Contribution:
+- computational recursive generation,
+- catalogue expansion,
+- conjecture R(5,5)=43,
+- upper bound improvements.
+
+Did not provide:
+- explicit Phi extension formula,
+- boundary theorem,
+- algebraic layer recursion.
+
+Reference:
+Brendan D. McKay,
+Ramsey Graphs Data:
+https://users.cecs.anu.edu.au/~bdm/data/ramsey.html
+
+
+5. Vigleik Angeltveit and Brendan McKay (2017, 2024)
+
+Improved upper bounds for R(5,5).
+
+Contribution:
+- R(5,5) <= 48,
+- later R(5,5) <= 46.
+
+
+6. Molnar, Toroczkai et al. (2018)
+
+Using Max-SAT style methods,
+constructed a K43 graph with exactly
+2 monochromatic K5 subgraphs.
+
+This is numerically consistent with
+a shadow-boundary value Delta=2.
+
+Did not provide:
+- shadow formula,
+- Phi algebra,
+- recursive layer theorem.
+
+
+7. Campos, Griffiths, Morris, Sahasrabudhe (2023)
+
+First asymptotic improvement of the diagonal Ramsey upper bound
+since 1935.
+
+Contribution:
+- R(k,k) <= (4-epsilon)^k.
+
+This concerns asymptotic bounds,
+not exact finite values like R(5,5).
+
+
+8. Mattheus and Verstraete (2023)
+
+Solved asymptotic off-diagonal problems
+using pseudorandom graph constructions.
+
+Contribution:
+- asymptotic off-diagonal Ramsey theory.
+
+Not focused on:
+- exact finite R(5,5),
+- layer recursion,
+- boundary Phi formulas.
+
+
+9. Brendan D. McKay Data Catalogue
+
+Reference:
+https://users.cecs.anu.edu.au/~bdm/data/ramsey.html
+
+Contains verified complete catalogues for:
+- R(3,4)
+- R(3,5)
+- R(3,6)
+- R(4,4)
+- R(4,5)
+
+Contains:
+- Ramsey(5,5,42) data:
+  328 source graphs
+  656 including complements
+
+Completeness status:
+- conjectured / computational reference set,
+- not a formally proven complete catalogue.
+
+
+10. Scope of the Machura Ramsey Shadow Formula
+
+The present project introduces:
+
+- Phi_G(x) extension algebra,
+- recursive clean-layer construction,
+- shadow-boundary formalization,
+- Delta(n -> n+1) boundary mechanism,
+- algebraic layer propagation.
+
+The project does NOT claim:
+- replacement of classical Ramsey theory,
+- replacement of exhaustive verification,
+- proof of catalogue completeness without proof,
+- automatic proof of unknown Ramsey values without computation.
+
+The formula operates as:
+- an algebraic construction framework,
+- a recursive clean-layer mechanism,
+- a boundary-analysis formalism.
